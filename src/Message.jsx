@@ -1,8 +1,12 @@
 import React from "react";
 
-function Message({name}) {
+function Message({messageList}) {
     return (
-        <h1>Hello {name}!</h1>
+    <ol>
+      {messageList.map((message) => (
+        <li key={message.id}>Автор:{message.autor} Сообщение: {message.text}</li>
+      ))}
+    </ol>
     );
   }
   
