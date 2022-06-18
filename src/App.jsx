@@ -1,40 +1,22 @@
-import React, {useState, useEffect, useRef} from "react";
-import './App.css';
-import Message from './Message';
-import { Box,TextField, Button } from "@mui/material";
-var id = 1;
+import Chat from "./Chat";
+import { Route,Routes } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
+import Profile from "./Profile";
+import Main from "./Main";
+import Error404 from "./404";
 
 function App() {
-  const [messageList, setMessageList] = useState([]);
-  var autor = useRef('');
-  
-  useEffect(()=>{
-    if (document.getElementById('autor').value){
-      setTimeout(()=>{
-        console.log(document.getElementById('autor').value+", you message sended");},1000)
-    }
-    
-  },[autor.current.value, messageList]);
-
-  function send(){
-    setMessageList(messageList.concat([{id: id, autor: document.getElementById('autor').value, text: document.getElementById('text').value}]));
-    id++;
-  }
   return (
-
-    <Box
-      component="form"
-      sx={{
-        '& > :not(style)': { m: 1, width: '20ch', height: '7.5ch' },
-      }}
-      noValidate
-      autoComplete="off"
-    >
-      <div><TextField id="autor" label="Автор" variant="outlined" autoFocus /></div>
-      <div><TextField id="text" label="Текст" variant="outlined" autoFocus /></div>
-      <Button onClick={send} variant="outlined">Отправить</Button>
-      <Message messageList={messageList}/>
-    </Box>
+      <Routes>
+        <Route path="/" element={<Main />}>
+          <Route index path="/" element={<Home />}></Route>
+          <Route path="/Chat" element={<Chat />}></Route>
+          <Route path="/Profile" element={<Profile />}></Route>
+          <Route path="/About" element={<About />}></Route> 
+        </Route>
+        <Route path="*" element={<Error404 />}></Route>
+      </Routes>
   );
 }
 
