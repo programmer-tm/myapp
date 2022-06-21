@@ -1,9 +1,14 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 function Profile() {
+  const count = useSelector(state => state.count);
+  const dispatch = useDispatch();
     return (
       <div>
-        User
+        <button onClick={()=>dispatch({type: 'minus'})}>-</button>
+        {count}
+        <button onClick={()=>dispatch({type: 'plus'})}>+</button>
       </div>
     );
   }

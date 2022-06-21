@@ -5,6 +5,7 @@ import About from "./About";
 import Profile from "./Profile";
 import Main from "./Main";
 import Error404 from "./404";
+import React from "react";
 
 function App() {
   return (
