@@ -1,8 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { getCount } from "../redux/redusers/profileReducer/profileSelector";
 
 function Profile() {
-  const count = useSelector(state => state.count);
+  const count = useSelector(getCount);
   const dispatch = useDispatch();
     return (
       <div>
