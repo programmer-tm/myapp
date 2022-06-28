@@ -23,7 +23,7 @@ function Chat() {
   useEffect(()=>{
     if (document.getElementById('autor').value){
       setTimeout(()=>{
-        console.log(document.getElementById('autor').value+", you message sended");},1000)
+        console.log(document.getElementById('autor').value+", you message sended");}, 4000)
     }
     
   },[autor.current.value, messageList]);
@@ -35,7 +35,7 @@ function Chat() {
   };
 
   function sendChat(){
-    dispatch({type: 'sendChat', payload: [{value: idchat, label: document.getElementById('addchat').value}]});
+    dispatch({type: 'sendChat', payload: [{value: idchat, label: document.getElementById('addchat').value}], meta: {delay: 3000}});
     idchat++;
    }
 
