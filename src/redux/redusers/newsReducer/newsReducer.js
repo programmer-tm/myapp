@@ -39,6 +39,7 @@ export const loadNews = () => {
         dispatch({type: load_News});
         try {
             const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+            if(response.status>= 400 && response.status<= 599) throw new Error(`Http exeption code: ${response.status}`);
             const data = await response.json();
             dispatch(getNew(data));
         } catch (e) {
