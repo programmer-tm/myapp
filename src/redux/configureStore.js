@@ -6,6 +6,7 @@ import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore  } from 'redux-persist';
 import { newsReducer } from './redusers/newsReducer/newsReducer';
 import thunk from 'redux-thunk';
+import { userReducer } from './redusers/userReduser/userReducer';
 
 const logger = (store) => (next) => (action) => {
     console.log('dispatching', action);
@@ -36,7 +37,8 @@ const reducer = combineReducers({
     count: profileReducer,
     messageList: messageReducer,
     chatList: chatReducer,
-    newsList: newsReducer
+    newsList: newsReducer,
+    user: userReducer
 })
 
 const persistedReducer = persistReducer(persistConfig, reducer);

@@ -15,6 +15,10 @@ function Home() {
     // eslint-disable-next-line
   }, [])
 
+  function updateNews(){
+      dispatch(loadNews());
+  }
+
   if (loading) {
     return (
       <div>Loading...</div>
@@ -23,7 +27,10 @@ function Home() {
 
   if (errors) {
     return (
-      <div>{errors}</div>
+      <div>
+        {errors}
+        <button onClick={updateNews}>Update</button>
+      </div>
     )
   } else {
     return (

@@ -6,3 +6,6 @@ export const sendChat = "sendChat";
 export const getNews = "getNews";
 export const load_News = "load_News";
 export const errorNews = "errorNews";
+export const registerStart = "registerStart";
+export const registerSuccess = "registerSuccess";
+export const registerErrors = "registerError";

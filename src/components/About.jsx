@@ -3,7 +3,8 @@ import React from "react";
 function About() {
     return (
       <div>
-        About
+        <p><a href="/Profile/login">Login</a></p>
+        <p><a href="/Profile/register">Register</a></p>
       </div>
     );
   }
