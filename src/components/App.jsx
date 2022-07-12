@@ -6,7 +6,7 @@ import Profile from "./Profile";
 import Main from "./Main";
 import Error404 from "./404";
 import React from "react";
-import Login from "./login";
+import LoginPage from "./LoginPage";
 import RegisterPage from "./RegisterPage";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
           <Route path="/Chat" element={<Chat />}></Route>
           <Route path="/Profile" element={<About />}></Route>
           <Route path="/About" element={<Profile />}></Route>
-          <Route path="/Profile/login" element={<Login />}></Route>
+          <Route path="/Profile/login" element={<LoginPage />}></Route>
           <Route path="/Profile/register" element={<RegisterPage />}></Route>
         </Route>
         <Route path="*" element={<Error404 />}></Route>

@@ -38,7 +38,7 @@ const reducer = combineReducers({
     messageList: messageReducer,
     chatList: chatReducer,
     newsList: newsReducer,
-    user: userReducer
+    currentUser: userReducer
 })
 
 const persistedReducer = persistReducer(persistConfig, reducer);
